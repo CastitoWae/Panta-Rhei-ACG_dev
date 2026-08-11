@@ -227,6 +227,11 @@
     5,5: CerenkiteReactorFuelRod
 
 - type: nuclearReactorPrefab
+  id: ReactorPrefab5x5Empty
+  parts:
+   -1,-1: BaseReactorPart # Can't be empty, so I'll put this nothing part in an inaccessible spot
+
+- type: nuclearReactorPrefab
   id: ReactorPrefab5x5Normal
   parts:
     0,0: SteelReactorGasChannel

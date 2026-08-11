@@ -270,6 +270,14 @@
           collection: MetalBreak
 
 - type: entity
+  id: NuclearReactorSmallEmpty
+  parent: NuclearReactorSmall
+  suffix: Empty
+  components:
+  - type: NuclearReactor
+    prefab: ReactorPrefab5x5Empty
+
+- type: entity
   id: NuclearReactorSmallRandom
   parent: NuclearReactorSmall
   suffix: Random
