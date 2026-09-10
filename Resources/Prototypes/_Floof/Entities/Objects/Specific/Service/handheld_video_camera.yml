@@ -1,0 +1,57 @@
+- type: entity
+  parent: BaseItem
+  id: HandheldVideoCamera
+  name: handheld video camera
+  description: A portable, handheld, live video camera.
+  suffix: Debug
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+    state: plain
+  - type: InteractionOutline
+  - type: Eye
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    transmitFrequencyId: SurveillanceCamera
+  - type: SurveillanceCamera
+    setupAvailableNetworks:
+      - SurveillanceCameraEngineering
+      - SurveillanceCameraSecurity
+      - SurveillanceCameraService
+      - SurveillanceCameraSupply
+      - SurveillanceCameraScience
+      - SurveillanceCameraGeneral
+      - SurveillanceCameraMedical
+      - SurveillanceCameraCommand
+      - SurveillanceCameraAI #DeltaV
+  - type: SurveillanceCameraMicrophone
+    blacklist:
+      components:
+      - SurveillanceCamera
+      - SurveillanceCameraMonitor
+      - RadioSpeaker
+  - type: ActiveListener
+    range: 10
+  - type: UserInterface
+    interfaces:
+      enum.SurveillanceCameraSetupUiKey.Camera:
+        type: SurveillanceCameraSetupBoundUi
+
+- type: entity
+  parent: HandheldVideoCamera
+  id: HandheldNewsVideoCamera
+  name: handheld news video camera
+  description: A portable, handheld news video camera. Lights, camera, action!
+  suffix: ""
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+    state: baguette
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: SurveillanceCameraEntertainment
+    transmitFrequencyId: SurveillanceCamera
+  - type: SurveillanceCamera
+    networkSet: true
